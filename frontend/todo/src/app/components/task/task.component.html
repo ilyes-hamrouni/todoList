@@ -1,0 +1,61 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+<div class="jumbotron" style="padding:45px 0px">
+    <h4 class="text-center">To Do List App</h4>
+  </div>
+
+  <div class="input-group">
+    <input type="text" class="form-control" #itemTitle>
+    <div>
+      <button (click)="addTask(itemTitle)">create</button>
+    </div>
+
+  </div>
+
+  <div style="margin:5px 0px">
+    <ul class="list-group">
+      <li class="list-group-item"  *ngFor="let task of tasks" >
+       <p class="float-left"  [routerLink]="['/task-details/1']"> {{task.description}} </p>
+        <button type="button" class="float-right" data-toggle="modal" data-target="#exampleModal">update</button>
+        <button class="float-right" (click)="deleteTask(task.taskId)">delete</button>
+      </li>
+    </ul>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<!-- modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
